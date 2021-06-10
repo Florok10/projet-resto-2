@@ -5,4 +5,4 @@ session_destroy();
 
 echo "Vous êtes déconnecté";
 
-header('Location: connexion.php');
+header('Location: index.php');

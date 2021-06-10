@@ -35,8 +35,8 @@
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="profil.php">Profil</a>
         <a class="nav-link" href="#">Reservation</a>
-        <a class="nav-link" href="#">Ajout Resto</a>
-        <a type="button" class="btn btn-primary" href="connexion.php">Se connecter</a>
+        <a class="nav-link" href="ajouterRestaurant.php">Ajout Resto</a>
+        <a type="button" class="btn btn-primary" href="index.php">Se connecter</a>
         <a type="button" class="btn btn-primary" href="logout.php">Se déconnecter</a>
       </div>
     </div>

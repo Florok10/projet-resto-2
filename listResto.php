@@ -11,7 +11,7 @@ session_start();
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-      <?php foreach ($restos  as $resto ): ?>
+      <?php foreach ($restos as $resto ): ?>
         <div class="col">
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="<?= $resto["picture"]?>" alt="">

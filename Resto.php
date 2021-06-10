@@ -61,7 +61,7 @@ class Resto{
         }catch(PDOException $e){
             echo 'cheh';
         }
-        $sth= $dbh->prepare("INSERT INTO `Resto`(`name`, `address`, `type`, `picture`, `description`) 
+        $sth= $dbh->prepare("INSERT INTO `restaurant_template`(`name`, `address`, `type`, `picture`, `description`) 
         VALUES(:name, :address, :type, :picture, :description);");
 
         $sth->bindParam(':name', $this->getName());

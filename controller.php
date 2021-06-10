@@ -15,6 +15,8 @@ if(isset($_POST['submit'])){
 
     $resto->envoisDonnees($dsn,$user,$password);
 
+    header("Location: listResto.php");
+
 
 
 }
