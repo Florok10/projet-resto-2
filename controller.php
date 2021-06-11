@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
 
     $resto->envoisDonnees($dsn,$user,$password);
 
-    /*header("Location: listResto.php");*/
+    header("Location: listResto.php");
 
     echo "Le restaurant" . " " . $name . " " . "a bien été ajouté à la liste des Restaurants";
 
