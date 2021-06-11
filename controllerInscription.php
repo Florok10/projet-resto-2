@@ -43,6 +43,8 @@ if(isset($_POST['submit'])){
 
     $user1->envoisDonnees($dsn, $user, $password);
 
+    header("Locate: index.php");
+
 
 
 }

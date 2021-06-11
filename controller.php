@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
     $target_dir = './uploads/';
     
    
-    $informationsImage = pathinfo($_FILES['pictureResto']['nameResto']);
+    $informationsImage = pathinfo($_FILES['pictureResto']['name']);
    
     $extensionImage = strtolower($informationsImage['extension']);
     
@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
     echo $target_file;
 
     if (move_uploaded_file($_FILES['pictureResto']['tmp_name'], $target_file)) {
-        echo "The file ". basename( $_FILES["pictureResto"]["nameResto"]). " has been uploaded.";
+        echo "The file ". basename( $_FILES["pictureResto"]["name"]). " has been uploaded.";
     } else {
 
         echo "Sorry, there was an error uploading your file.";
@@ -38,14 +38,16 @@ if(isset($_POST['submit'])){
     $resto->setName($name);
     $resto->setAddress($address);
     $resto->setType($type);
-    $resto->setPictureResto($pictureResto);
+    $resto->setPictureResto($target_file);
     $resto->setDescription($description);
 
     $resto->envoisDonnees($dsn,$user,$password);
 
-    header("Location: listResto.php");
+    
 
     echo "Le restaurant" . " " . $name . " " . "a bien été ajouté à la liste des Restaurants";
+
+    header("Locate: listResto.php");
 
 
 

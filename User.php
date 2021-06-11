@@ -107,7 +107,7 @@ class User {
             header("Location: profil.php");
     
         }else{
-            header("Location: connexion.php");
+            header("Location: index.php");
         }
             
     }
