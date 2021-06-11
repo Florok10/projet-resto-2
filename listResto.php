@@ -1,8 +1,9 @@
 <?php
 session_start();
- require_once 'header.inc.php';
- require_once 'controllerResto.php';
  $restos = $_SESSION['AllResto'];
+ require_once 'controllerResto.php';
+ require_once 'header.inc.php';
+
 ?>
 
 <main>

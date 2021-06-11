@@ -1,4 +1,7 @@
-<?php require_once 'header.inc.php' ?>
+<?php
+session_start();
+require_once 'controllerLogin.php';
+require_once 'header.inc.php' ?>
 <form class="col-1 col-3" action="controllerLogin.php" method="POST">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>

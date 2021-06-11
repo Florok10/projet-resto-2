@@ -1,5 +1,5 @@
 <?php
-
+require_once 'controllerInscription.php';
 require_once 'header.inc.php';
 ?>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,22 +24,47 @@
     </style>
 
 </head>
+
 <body>
+<?php $statusSession = session_status();
+print $statusSession;
+if($statusSession == 2) : ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="listResto.php?liste=restos">Restos</a>
+  <a class="navbar-brand" href="listResto.php?liste=restos">Restos</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="profil.php">Profil</a>
-        <a class="nav-link" href="#">Reservation</a>
-        <a class="nav-link" href="ajouterRestaurant.php">Ajout Resto</a>
-        <a type="button" class="btn btn-primary" href="inscription.php">S'inscrire</a>
-        <a type="button" class="btn btn-primary" href="index.php">Se connecter</a>
+        <a class="nav-link" href="#">Réservation</a>
         <a type="button" class="btn btn-primary" href="logout.php">Se déconnecter</a>
+        <a class="nav-link" href="ajouterRestaurant.php">Ajout Resto</a>
       </div>
     </div>
   </div>
 </nav>
+<?php else : ?>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a type="button" class="btn btn-primary" href="inscription.php">S'inscrire</a>
+        <a type="button" class="btn btn-primary" href="index.php">Se connecter</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<?php endif?>
+</body>
+<!-- <a class="navbar-brand" href="listResto.php?liste=restos">Restos</a>
+<a class="nav-link active" aria-current="page" href="profil.php">Profil</a>
+<a class="nav-link" href="#">Reservation</a>
+<a type="button" class="btn btn-primary" href="logout.php">Se déconnecter</a>
+<a class="nav-link" href="ajouterRestaurant.php">Ajout Resto</a> -->
+

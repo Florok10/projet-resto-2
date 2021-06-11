@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+require_once 'controller.php';
 require_once 'header.inc.php';
 ?>
 

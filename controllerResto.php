@@ -5,9 +5,9 @@ require_once 'DAO.php';
 $_SESSION['AllResto'];
 if(isset($_GET["liste"])){
    
-$rest = new Resto();
+$resto = new Resto();
 
-$_SESSION['AllResto'] = $rest->recupDonnees($dsn,$user,$password);
+$_SESSION['AllResto'] = $resto->recupDonnees($dsn,$user,$password);
 header("Location: listResto.php");
 }
 

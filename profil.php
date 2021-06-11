@@ -1,11 +1,12 @@
 <?php
+session_start();
 require_once 'header.inc.php';
 require_once 'controllerLogin.php';
 
 $users = $_SESSION['obj_user'];
 
-echo var_dump($users);
-echo $users["firstname"];
+// echo var_dump($users);
+// echo $users["firstname"];
 
 ?>
 <div class="row py-5 px-4">

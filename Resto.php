@@ -96,7 +96,7 @@ class Resto{
             
     
         }else{
-            header("Location: index.php");
+            header("Location: profil.php");
         }
 
     }
