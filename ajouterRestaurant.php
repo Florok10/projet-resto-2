@@ -4,22 +4,22 @@ require_once 'header.inc.php';
 ?>
 
 <div class="container">
-<form class="row g-3" method="POST" action="controller.php">
+<form class="row g-3" method="POST" action="controller.php" enctype="multipart/form-data">
   <div class="col-md-4">
     <label for="validationDefault01" class="form-label">Name</label>
-    <input type="text" class="form-control" id="validationDefault01"  name="name" required>
+    <input type="text" class="form-control" id="validationDefault01"  name="nameResto" required>
   </div>
   <div class="col-md-4">
     <label for="validationDefault02" class="form-label">Address</label>
-    <input type="text" class="form-control" id="validationDefault02" name="address" required>
+    <input type="text" class="form-control" id="validationDefault02" name="addressResto" required>
   </div>
   <div class="mb-3">
     <label for="formFile" class="form-label">Default file input example</label>
-    <input class="form-control" type="file" id="formFile">
+    <input class="form-control" type="file" id="formFile" name="pictureResto">
   </div>
   <div class="col-md-3">
     <label for="validationDefault04" class="form-label">Type</label>
-    <select class="form-select" id="validationDefault04" required name="type">
+    <select class="form-select" id="validationDefault04" required name="typeResto">
       <option selected disabled value="Italien">Italien</option>
       <option value="grec">Grec</option>
       <option value="fastFood">Fast Food</option>
@@ -29,7 +29,7 @@ require_once 'header.inc.php';
   </div>
   <div class="col-md-3">
     <label for="validationDefault05" class="form-label">Description</label>
-    <input type="text" class="form-control" id="validationDefault05" required name="description">
+    <input type="text" class="form-control" id="validationDefault05" required name="descriptionResto">
   </div>
   <div class="col-12">
     <div class="form-check">

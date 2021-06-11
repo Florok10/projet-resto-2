@@ -5,7 +5,7 @@ class Resto{
     private $_id;
     private $_name;
     private $_address;
-    private $_picture;
+    private $_pictureResto;
     private $_type;
     private $_description;
 
@@ -15,7 +15,7 @@ class Resto{
     }
 
     public function setName($name){
-        $this->_name= $name;
+        $this->_name = $name;
     }
 
     public function getName(){
@@ -23,21 +23,21 @@ class Resto{
     }
 
     public function setAddress($address){
-        $this->_address= $address;
+        $this->_address = $address;
     }
 
-    public function getAdress(){
+    public function getAddress(){
         return $this->_address;
     }
-    public function setPicture($picture){
-        $this->_picture= $picture;
+    public function setPictureResto($pictureResto){
+        $this->_pictureResto = $pictureResto;
     }
 
-    public function getPicture(){
-        return $this->_picture;
+    public function getPictureResto(){
+        return $this->_pictureResto;
     }
     public function setType($type){
-        $this->_type= $type;
+        $this->_type = $type;
     }
 
     public function getType(){
@@ -45,7 +45,7 @@ class Resto{
     }
     
     public function setDescription($description){
-        $this->_description= $description;
+        $this->_description = $description;
     }
 
     public function getDescription(){
@@ -61,14 +61,14 @@ class Resto{
         }catch(PDOException $e){
             echo 'cheh';
         }
-        $sth= $dbh->prepare("INSERT INTO `restaurant_template`(`name`, `address`, `type`, `picture`, `description`) 
-        VALUES(:name, :address, :type, :picture, :description);");
+        $sth= $dbh->prepare("INSERT INTO `restaurant_template`(`nameResto`, `addressResto`, `typeResto`, `pictureResto`, `descriptionResto`) 
+        VALUES(:nameResto, :addressResto, :typeResto, :pictureResto, :descriptionResto);");
 
-        $sth->bindParam(':name', $this->getName());
-        $sth->bindParam(':address', $this->getAdress());
-        $sth->bindParam(':type', $this->getType());
-        $sth->bindParam(':picture', $this->getPicture());
-        $sth->bindParam(':description', $this->getDescription());
+        $sth->bindParam(':nameResto', $this->getName());
+        $sth->bindParam(':addressResto', $this->getAddress());
+        $sth->bindParam(':typeResto', $this->getType());
+        $sth->bindParam(':pictureResto', $this->getPictureResto());
+        $sth->bindParam(':descriptionResto', $this->getDescription());
 
         $sth->execute();
     }
@@ -78,7 +78,7 @@ class Resto{
         try{
             $dbh= new PDO($dsn,$user,$password);
     
-        $sth = $dbh->prepare("SELECT * FROM `Resto`");
+        $sth = $dbh->prepare("SELECT * FROM `restaurant_template`");
         
         $sth->execute();
         $count = $sth->rowCount();
@@ -96,7 +96,7 @@ class Resto{
             
     
         }else{
-            header("Location: connexion.php");
+            header("Location: index.php");
         }
 
     }
