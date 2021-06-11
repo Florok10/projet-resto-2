@@ -11,6 +11,28 @@ if(isset($_POST['submit'])){
     $type = $_POST['typeResto'];
     $description = $_POST['descriptionResto'];
 
+    if (isset($_FILES['pictureResto']) && $_FILES['pictureResto']['error'] == 0) {
+        echo "c'est bon";
+    }
+    
+    $target_dir = './uploads/';
+    
+   
+    $informationsImage = pathinfo($_FILES['pictureResto']['nameResto']);
+   
+    $extensionImage = strtolower($informationsImage['extension']);
+    
+    $target_file = $target_dir .  $name . "." .$extensionImage;
+    echo $target_file;
+
+    if (move_uploaded_file($_FILES['pictureResto']['tmp_name'], $target_file)) {
+        echo "The file ". basename( $_FILES["pictureResto"]["nameResto"]). " has been uploaded.";
+    } else {
+
+        echo "Sorry, there was an error uploading your file.";
+    }
+
+
     $resto = new Resto();
 
     $resto->setName($name);
