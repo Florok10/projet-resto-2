@@ -2,7 +2,6 @@
 session_start();
  $restos = $_SESSION['AllResto'];
  require_once 'controllerResto.php';
-//  require_once __DIR__ . 'controllerReservation.php';
  require_once 'header.inc.php';
 
 ?>
@@ -18,9 +17,9 @@ session_start();
         <?php foreach ($restos as $resto ): ?>
         <div class="col-3 col-6">
         <form class="col-3 col-6" action="controllerReservation.php" method="POST">
-          <select class="form-select form-select-lg mb-3">
+          <select name="choixResto" class="form-select form-select-lg mb-3">
             <option selected value="">Choisissez ce restaurant</option>
-            <option name="choixResto" value="<?= $resto["nameResto"]?>"><?= $resto["nameResto"]?></option>
+            <option value="<?= $resto["nameResto"]?>"><?= $resto["nameResto"]?></option>
           </select>
           <input type="datetime-local" id="datetime-local" name="date">
           <button class="btn btn-primary" type="submit" name="submitReservation">Réserver</button>

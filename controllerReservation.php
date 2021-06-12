@@ -1,9 +1,9 @@
 <?php 
-
+    session_start();
 require_once 'Reservation.php';
 require_once 'Resto.php';
 
-if(isset($_POST['submit_reservation']) && !empty($_POST['date']) && !empty($_POST['choixResto'])){
+if(isset($_POST['submitReservation']) && !empty($_POST['date']) && !empty($_POST['choixResto'])){
     $date = $_POST['date'];
     $choixResto = $_POST['choixResto'];
 
@@ -12,8 +12,10 @@ if(isset($_POST['submit_reservation']) && !empty($_POST['date']) && !empty($_POS
     $nvReservation->setDate();
     $nvReservation->setChoix();
 
-    $user1->envoisReservation($dsn, $user, $password);
+    $nvReservation->envoiReservation($dsn, $user, $password);
 
     header('Location: profil.php');
 
+} else {
+    echo 'Remplissez bien les champs.';
 }
