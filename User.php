@@ -1,6 +1,6 @@
 <?php
 
-class User {
+class User extends Reservation{
     private $_id;
     private $_firstname;
     private $_lastname;
@@ -59,11 +59,11 @@ class User {
         return $this->_picture;
     }
 
-    public function envoisDonnees($dsn, $user, $cheh){
+    public function envoisDonnees($dsn, $user, $password){
 
 
         try{
-            $dbh = new PDO($dsn, $user, $cheh);
+            $dbh = new PDO($dsn, $user, $password);
            
         }
         catch(PDOException $e){
