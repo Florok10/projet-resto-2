@@ -2,7 +2,7 @@
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'Resto.php';
 
-class Reservation extends Restaurant {
+class Reservation {
 
     private $_idReservation;
     private $_date;

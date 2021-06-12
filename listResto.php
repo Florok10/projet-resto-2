@@ -14,7 +14,7 @@ session_start();
 
       <?php foreach ($restos as $resto ): ?>
         <div class="col-3 col-6">
-          <div class="card shadow-sm">
+          <div class="card shadow-sm" style="width: 22rem">
             <img class="bd-placeholder-img card-img-top" src="<?= $resto["pictureResto"]?>" alt="">
             <div class="card-body">
                 <h1><?= $resto["nameResto"]?></h1>
@@ -22,8 +22,7 @@ session_start();
               <p class="card-text"><?= $resto["descriptionResto"]?></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  
                 </div>
                 <small class="text-muted">9 mins</small>
               </div>

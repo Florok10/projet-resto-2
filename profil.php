@@ -2,6 +2,7 @@
 require_once 'controllerLogin.php';
 require_once 'header.inc.php';
 
+
 $users = $_SESSION['obj_user'];
 $reservations = $_SESSION['obj_reservation'];
 
@@ -28,6 +29,16 @@ $reservations = $_SESSION['obj_reservation'];
                     <p class="font-italic mb-0"><?= $users["email"]?></p>
                 </div>
             </div>
+
+            <div class="px-5 py-5">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $reservations['nameOfRestaurant']?></h5>
+                    <p class="card-text"><?= $reservations["typeResto"]?></p>
+                    <p class="card-text"><?= $reservations['descriptionOfRestaurant']?></p>
+                    <p class="card-text"><?= $reservations['date']?></p>
+                </div>
+            </div>
+
             <div class="py-4 px-4">
                 <div class="d-flex align-items-center justify-content-between mb-3">
                     <h5 class="mb-0">Recent photos</h5><a href="#" class="btn btn-link text-muted">Show all</a>
@@ -42,7 +53,7 @@ $reservations = $_SESSION['obj_reservation'];
     </div>
 </div>
 
-<?php
+    <?php
 
-require_once 'footer.inc.php';
-?>
+    require_once 'footer.inc.php';
+    ?>
