@@ -29,15 +29,16 @@ $reservations = $_SESSION['obj_reservation'];
                     <p class="font-italic mb-0"><?= $users["email"]?></p>
                 </div>
             </div>
-
+            <?php foreach ($reservations as $reservation ): ?>
             <div class="px-5 py-5">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $reservations['nameOfRestaurant']?></h5>
-                    <p class="card-text"><?= $reservations["typeResto"]?></p>
-                    <p class="card-text"><?= $reservations['descriptionOfRestaurant']?></p>
-                    <p class="card-text"><?= $reservations['date']?></p>
+                    <h5 class="card-title"><?= $reservation['nameOfRestaurant']?></h5>
+                    <p class="card-text"><?= $reservation["typeResto"]?></p>
+                    <p class="card-text"><?= $reservation['descriptionOfRestaurant']?></p>
+                    <p class="card-text"><?= $reservation['date']?></p>
                 </div>
             </div>
+            <?php endforeach;?>
 
             <div class="py-4 px-4">
                 <div class="d-flex align-items-center justify-content-between mb-3">

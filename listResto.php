@@ -21,9 +21,7 @@ session_start();
               <p class="card-text"><?= $resto["typeResto"]?></p>
               <p class="card-text"><?= $resto["descriptionResto"]?></p>
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  
-                </div>
+              <a class="btn btn-primary" href="#">Voir détails</a>
                 <small class="text-muted">9 mins</small>
               </div>
             </div>
