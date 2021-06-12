@@ -1,12 +1,8 @@
 <?php
-  require_once(__dir__ . '/controller.php'); //requiert le dossier du fichier et controller.php une seule fois chacun
+session_start();
 
-  class Logout extends Controller { //on crée la classe Logout qui s'étend dans la classe Controller
+session_destroy();
 
-    public function __construct() // on crée le constructeur de notre classe
-    {
-      session_destroy(); //on utilise la fonction php pour terminet une session
-      header('Refresh: 1;url=index.php'); //on est ensuite redirigé sur index.php
-    }
-  }
-?>
+header('Refresh:1;url=index.php');
+exit();
+ ?>
