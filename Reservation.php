@@ -1,11 +1,10 @@
 <?php 
 
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'Resto.php';
-
 class Reservation {
 
     private $_idReservation;
     private $_date;
+    private $_choixResto;
 
     public function setIdReservation($idReservation){
     $this->_idReservation=$idReservation;
@@ -13,6 +12,14 @@ class Reservation {
 
     public function getIdReservation(){
         return $this->_idReservation;
+    }
+
+    public function setChoixResto($choixResto){
+        $this->_choixResto=$choixResto;
+    }
+
+    public function getChoixResto(){
+        return$this->_choixResto;
     }
 
     public function setDate($date){
@@ -35,10 +42,11 @@ class Reservation {
 
         }
 
-        $sth = $dbh->prepare("INSERT INTO `reservation`(date) 
-        VALUES (:date;");
+        $sth = $dbh->prepare("INSERT INTO `reservation`(date, choixResto) 
+        VALUES (:date, :choixResto;");
         
         $sth->bindParam(":date", $this->getDate();
+        $sth->bindParam(":choixResto", $this->getChoixResto());
      
         $sth->execute();   
 
