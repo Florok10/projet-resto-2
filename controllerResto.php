@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'Resto.php';
 require_once 'DAO.php';
 $_SESSION['AllResto'];

@@ -62,9 +62,3 @@ if($statusSession == 2) : ?>
 </nav>
 <?php endif?>
 </body>
-<!-- <a class="navbar-brand" href="listResto.php?liste=restos">Restos</a>
-<a class="nav-link active" aria-current="page" href="profil.php">Profil</a>
-<a class="nav-link" href="#">Reservation</a>
-<a type="button" class="btn btn-primary" href="logout.php">Se déconnecter</a>
-<a class="nav-link" href="ajouterRestaurant.php">Ajout Resto</a> -->
-
