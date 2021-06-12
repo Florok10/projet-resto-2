@@ -1,6 +1,6 @@
 <?php
 
-class User extends Reservation{
+class User{
     private $_id;
     private $_firstname;
     private $_lastname;

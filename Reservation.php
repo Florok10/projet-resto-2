@@ -1,23 +1,23 @@
 <?php 
 
-class Reservation {
+class Reservation extends Restaurant {
 
     private $_idReservation;
     private $_date;
 
-    function setIdReservation($idReservation){
+    public function setIdReservation($idReservation){
     $this->_idReservation=$idReservation;
     }
 
-    function getIdReservation(){
-        return $this->_IdReservation;
+    public function getIdReservation(){
+        return $this->_idReservation;
     }
 
-    function setDate($date){
+    public function setDate($date){
     $this->_date=$date;
     }
 
-    function getDate(){
+    public function getDate(){
         return $this->_date;
     }
 
@@ -33,12 +33,14 @@ class Reservation {
 
         }
 
-        $sth = $dbh->prepare("INSERT INTO reservation(firstname, lastname, email, date) VALUES (:firstname, :lastname, :email, :date);");
+        $sth = $dbh->prepare("INSERT INTO `reservation`(date) 
+        VALUES (:date;");
         
         $sth->bindParam(":firstname", $this->getFirstName());
         $sth->bindParam(":lastname", $this->getLastName());
         $sth->bindParam(":email", $this->getEmail());
-        $sth->bindParam(":date", $this->getDate());
+        $sth->bindParam(":password", $this->getPassword());
+        $sth->bindParam(":picture", $this->getPicture());
      
         $sth->execute();   
 
