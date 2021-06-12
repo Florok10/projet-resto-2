@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'controllerLogin.php';
 require_once 'header.inc.php';
 
@@ -15,7 +14,7 @@ $users = $_SESSION['obj_user'];
         <div class="bg-white shadow rounded overflow-hidden">
             <div class="px-4 pt-0 pb-4 cover">
                 <div class="media align-items-end profile-head">
-                    <div class="col-lg-6 profile mr-3"><img src="<?= $users["picture"]?>" class="img-fluid img-thumbnail">Edit profile</a></div>
+                    <div class="col-lg-6 profile mr-3"><img src="<?= $users["picture"]?>" class="img-fluid img-thumbnail"><a href="#" class="btn btn-link">Edit profile</a></div>
                     
                 </div>
             </div>
