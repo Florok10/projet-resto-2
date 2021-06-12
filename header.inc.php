@@ -27,7 +27,7 @@
 
 <body>
 <?php $statusSession = session_status();
-
+print $statusSession;
 if($statusSession == 2) : ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">

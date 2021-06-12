@@ -37,13 +37,13 @@ if(isset($_POST['submit'])){
     $user1->setLastName($lastname);
     $user1->setEmail($email);
     $user1->setPassword($mdp);
-    $user1->setPicture($target_file );
+    $user1->setPicture($target_file);
 
     echo $user1->getFirstName();
 
     $user1->envoisDonnees($dsn, $user, $password);
 
-    header("Locate: index.php");
+    header("Location: index.php");
 
 
 

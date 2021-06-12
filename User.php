@@ -71,12 +71,12 @@ class User {
 
         }
 
-        $sth = $dbh->prepare("INSERT INTO user(firstname, lastname, email, password, picture) VALUES (:firstname, :lastname, :email, :mdp, :picture);");
+        $sth = $dbh->prepare("INSERT INTO user(firstname, lastname, email, password, picture) VALUES (:firstname, :lastname, :email, :password, :picture);");
         
         $sth->bindParam(":firstname", $this->getFirstName());
         $sth->bindParam(":lastname", $this->getLastName());
         $sth->bindParam(":email", $this->getEmail());
-        $sth->bindParam(":mdp", $this->getPassword());
+        $sth->bindParam(":password", $this->getPassword());
         $sth->bindParam(":picture", $this->getPicture());
      
         $sth->execute();   

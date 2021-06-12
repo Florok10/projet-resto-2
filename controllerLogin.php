@@ -5,7 +5,7 @@ require_once "DAO.php";
 if(isset($_POST['submit'])){
     
     $email = $_POST['email'];
-    $mdp = $_POST['mdp'];
+    $mdp = $_POST['password'];
  
     $user1 = new User();
 
