@@ -3,6 +3,7 @@ require_once 'controllerLogin.php';
 require_once 'header.inc.php';
 
 $users = $_SESSION['obj_user'];
+$reservations = $_SESSION['obj_reservation'];
 
 // echo var_dump($users);
 // echo $users["firstname"];

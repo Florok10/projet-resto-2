@@ -1,7 +1,5 @@
 <?php
 
-    require_once 'Reservation.php';
-
 class Resto{
 
     private $_id;

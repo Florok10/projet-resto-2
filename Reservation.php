@@ -1,5 +1,7 @@
 <?php 
 
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'Resto.php';
+
 class Reservation extends Restaurant {
 
     private $_idReservation;
@@ -36,11 +38,7 @@ class Reservation extends Restaurant {
         $sth = $dbh->prepare("INSERT INTO `reservation`(date) 
         VALUES (:date;");
         
-        $sth->bindParam(":firstname", $this->getFirstName());
-        $sth->bindParam(":lastname", $this->getLastName());
-        $sth->bindParam(":email", $this->getEmail());
-        $sth->bindParam(":password", $this->getPassword());
-        $sth->bindParam(":picture", $this->getPicture());
+        $sth->bindParam(":date", $this->getDate();
      
         $sth->execute();   
 

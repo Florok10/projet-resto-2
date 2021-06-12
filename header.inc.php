@@ -39,8 +39,8 @@ if($statusSession == 2) : ?>
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="profil.php">Profil</a>
         <a class="nav-link" href="#">Réservation</a>
-        <a type="button" class="btn btn-primary" href="logout.php">Se déconnecter</a>
         <a class="nav-link" href="ajouterRestaurant.php">Ajout Resto</a>
+        <a type="button" class="btn btn-primary" href="logout.php">Se déconnecter</a>
       </div>
     </div>
   </div>
