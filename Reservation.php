@@ -2,17 +2,8 @@
 
 class Reservation {
 
-    private $_idReservation;
     private $_date;
     private $_choixResto;
-
-    public function setIdReservation($idReservation){
-    $this->_idReservation=$idReservation;
-    }
-
-    public function getIdReservation(){
-        return $this->_idReservation;
-    }
 
     public function setChoixResto($choixResto){
         $this->_choixResto=$choixResto;
@@ -23,7 +14,7 @@ class Reservation {
     }
 
     public function setDate($date){
-    $this->_date=$date;
+        $this->_date=$date;
     }
 
     public function getDate(){
@@ -43,7 +34,7 @@ class Reservation {
         }
 
         $sth = $dbh->prepare("INSERT INTO `reservation`(date, choixResto) 
-        VALUES (:date, :choixResto;");
+        VALUES (:date, :choixResto);");
         
         $sth->bindParam(":date", $this->getDate();
         $sth->bindParam(":choixResto", $this->getChoixResto());
