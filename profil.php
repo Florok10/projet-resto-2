@@ -30,9 +30,11 @@ $restos = $_SESSION['AllResto'];
                     <p class="font-italic mb-0"><?= $users["email"]?></p>
                 </div>
             </div>
+            <!-- Reservations -->
             <?php foreach ($reservations as $reservation && $restos as $resto ): ?>
             <div class="px-5 py-5">
                 <div class="card-body">
+                <img class="bd-placeholder-img card-img-top" src="<?= $resto["pictureResto"]?>" alt="">
                     <h5 class="card-title"><?= $reservation['nameOfRestaurant']?></h5>
                     <p class="card-text"><?= $reservation["typeResto"]?></p>
                     <p class="card-text"><?= $reservation['descriptionOfRestaurant']?></p>
@@ -44,11 +46,6 @@ $restos = $_SESSION['AllResto'];
             <div class="py-4 px-4">
                 <div class="d-flex align-items-center justify-content-between mb-3">
                     <h5 class="mb-0">Recent photos</h5><a href="#" class="btn btn-link text-muted">Show all</a>
-                </div>
-                <!-- Reservations -->
-                <div class="row">
-                    <div class="col-lg-6 mb-2 pr-lg-1"><img src="https://images.unsplash.com/photo-1469594292607-7bd90f8d3ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="" class="img-fluid rounded shadow-sm"></div>
-                   
                 </div>
             </div>
         </div>
