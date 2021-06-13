@@ -5,6 +5,7 @@ require_once 'header.inc.php';
 
 $users = $_SESSION['obj_user'];
 $reservations = $_SESSION['obj_reservation'];
+$restos = $_SESSION['AllResto'];
 
 // echo var_dump($users);
 // echo $users["firstname"];
@@ -29,7 +30,7 @@ $reservations = $_SESSION['obj_reservation'];
                     <p class="font-italic mb-0"><?= $users["email"]?></p>
                 </div>
             </div>
-            <?php foreach ($reservations as $reservation ): ?>
+            <?php foreach ($reservations as $reservation && $restos as $resto ): ?>
             <div class="px-5 py-5">
                 <div class="card-body">
                     <h5 class="card-title"><?= $reservation['nameOfRestaurant']?></h5>
