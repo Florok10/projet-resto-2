@@ -2,6 +2,8 @@
 session_start();
 require_once "User.php";
 require_once "DAO.php";
+require_once "Resto.php";
+require_once "Reservation.php";
 
 if(isset($_POST['submit'])){
     
