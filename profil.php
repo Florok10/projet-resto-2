@@ -63,3 +63,5 @@ $restos = $_SESSION['AllResto'];
             hiddenBox.show();
         });
     </script>
+
+    <!-- je ne trouve pas comment faire en sorte qu'une classe prenne dans sa classe les variables d'une autre classe-->
