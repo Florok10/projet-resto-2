@@ -2,8 +2,7 @@
 require_once "User.php";
 require_once "DAO.php";
 
-if(isset($_POST['submit'])){
-    echo 'test1';
+ if(isset($_POST['submit']) && $_POST['password'] === $_POST['password_confirm']){
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
@@ -44,8 +43,8 @@ if(isset($_POST['submit'])){
     $user1->envoisDonnees($dsn, $user, $password);
 
     header("Location: index.php");
-
-
-
+} elseif($_POST['password'] != $_POST['password_confirm']) {
+    echo 'Vos mots de passes ne correspondent pas';
+    header('Refresh:3; url=inscription.php ');
 }
 ?>

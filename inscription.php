@@ -17,10 +17,14 @@ require_once 'header.inc.php';
     <label for="validationDefault02" class="form-label">Email</label>
     <input type="email" class="form-control" id="validationDefault02" name="email" required>
   </div>
- 
   <div class="col-md-3">
     <label for="validationDefault05" class="form-label">password</label>
     <input type="password" class="form-control" id="validationDefault05" required name="password">
+  </div>
+
+  <div class="col-md-3">
+    <label for="validationDefault05" class="form-label">Confirm password</label>
+    <input type="password" class="form-control" id="validationDefault05" required name="password_confirm">
   </div>
 
   <div class="mb-3">
