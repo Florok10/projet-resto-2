@@ -2,11 +2,9 @@
 require_once 'controllerLogin.php';
 require_once 'header.inc.php';
 
-// $cookie_name = "ip";
-// $cookie_value = $_SERVER["REMOTE_ADDR"];
-// $cookie_ip = setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-
-$_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
+$cookie_name = "ip";
+$cookie_value = $_SERVER["REMOTE_ADDR"];
+$cookie_ip = setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
 
 $users = $_SESSION['obj_user'];
@@ -32,7 +30,7 @@ $restos = $_SESSION['AllResto'];
             <div id="profil_container" class="px-4 py-3">
                 <h5 class="mb-0">A propos de vous</h5>
                 <div class="p-4 rounded shadow-sm bg-light">
-                    <p><?php echo ($_SESSION['ip']);?></p>
+                    <p><?php echo (setcookie($cookie_value));?></p>
                     <p class="font-italic mb-0"><?= $users["firstname"]?></p>
                     <p class="font-italic mb-0"><?= $users["lastname"]?></p>
                     <p class="font-italic mb-0"><?= $users["email"]?></p>
