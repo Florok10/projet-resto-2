@@ -23,7 +23,7 @@ $restos = $_SESSION['AllResto'];
             </div>
          
             <div class="px-4 py-3">
-                <h5 class="mb-0">About</h5>
+                <h5 class="mb-0">A propos de vous</h5>
                 <div class="p-4 rounded shadow-sm bg-light">
                     <p class="font-italic mb-0"><?= $users["firstname"]?></p>
                     <p class="font-italic mb-0"><?= $users["lastname"]?></p>
@@ -35,9 +35,9 @@ $restos = $_SESSION['AllResto'];
             <div class="px-5 py-5">
                 <div class="card-body">
                 <img class="bd-placeholder-img card-img-top" src="<?= $resto["pictureResto"]?>" alt="">
-                    <h5 class="card-title"><?= $reservation['nameOfRestaurant']?></h5>
-                    <p class="card-text"><?= $reservation["typeResto"]?></p>
-                    <p class="card-text"><?= $reservation['descriptionOfRestaurant']?></p>
+                    <h5 class="card-title"><?= $reservation['choixResto']?></h5>
+                    <p class="card-text"><?= $resto["typeResto"]?></p>
+                    <p class="card-text"><?= $resto['descriptionOfRestaurant']?></p>
                     <p class="card-text"><?= $reservation['date']?></p>
                 </div>
             </div>
