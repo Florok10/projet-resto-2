@@ -11,7 +11,7 @@ $restos = $_SESSION['AllResto'];
 // echo $users["firstname"];
 
 ?>
-<div class="row py-5 px-4">
+<div id="div_scroll" class="row py-5 px-4">
     <div class="col-md-5 mx-auto">
         
         <div class="bg-white shadow rounded overflow-hidden">
@@ -22,7 +22,7 @@ $restos = $_SESSION['AllResto'];
                 </div>
             </div>
          
-            <div class="px-4 py-3">
+            <div id="profil_container" class="px-4 py-3">
                 <h5 class="mb-0">A propos de vous</h5>
                 <div class="p-4 rounded shadow-sm bg-light">
                     <p class="font-italic mb-0"><?= $users["firstname"]?></p>
@@ -56,3 +56,10 @@ $restos = $_SESSION['AllResto'];
 
     require_once 'footer.inc.php';
     ?>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js">
+        var hiddenBox = $( "#profil_container");
+        $ ("#div_scroll").scroll( function( event ){
+            hiddenBox.show();
+        });
+    </script>
