@@ -14,8 +14,9 @@ if(isset($_POST['submit'])){
 
     $user1->setEmail($email);
     $user1->setPassword($mdp);
+    $user1->setRole($role);
     
-    $logs = [$user1->getEmail(), $user1->getPassword()];
+    $logs = [$user1->getEmail(), $user1->getPassword(), $user1->getRole()];
 
     $user1->login($dsn, $user, $password, $logs);
 }

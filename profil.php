@@ -30,7 +30,7 @@ $restos = $_SESSION['AllResto'];
             <div id="profil_container" class="px-4 py-3">
                 <h5 class="mb-0">A propos de vous</h5>
                 <div class="p-4 rounded shadow-sm bg-light">
-                    <p><?php echo (setcookie($cookie_value));?></p>
+                    <p class="font-italic mb-0">Votre ip est :<?php echo ' ' . (setcookie($cookie_value));?></p>
                     <p class="font-italic mb-0"><?= $users["firstname"]?></p>
                     <p class="font-italic mb-0"><?= $users["lastname"]?></p>
                     <p class="font-italic mb-0"><?= $users["email"]?></p>

@@ -40,7 +40,7 @@ if($statusSession == 2) : ?>
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="profil.php">Profil</a>
         <!-- <a class="nav-link" href="#">Réservation</a> -->
-        <a class="nav-link" href="ajouterRestaurant.php">Ajout Resto</a>
+        <?php if(var_dump($_SESSION['role']) == 2) : ?><a class="nav-link" href="ajouterRestaurant.php">Ajout Resto</a><?php endif?>
         <a type="button" class="btn btn-primary" href="logout.php">Se déconnecter</a>
       </div>
     </div>
