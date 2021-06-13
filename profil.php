@@ -18,7 +18,7 @@ $restos = $_SESSION['AllResto'];
 <div id="div_scroll" class="row py-5 px-4">
     <div class="col-md-5 mx-auto">
 
-     <div><?php echosetcookie();?></div>
+     <div><?php echo setcookie();?></div>
         
         <div class="bg-white shadow rounded overflow-hidden">
             <div class="px-4 pt-0 pb-4 cover">
@@ -37,7 +37,8 @@ $restos = $_SESSION['AllResto'];
                 </div>
             </div>
             <!-- Reservations -->
-            <?php foreach ($reservations as $reservation && $restos as $resto ): ?>
+            <?php foreach ($reservations as $reservation): ?>
+                <?php foreach ($restos as $resto):?>
             <div class="px-5 py-5">
                 <div class="card-body">
                 <img class="bd-placeholder-img card-img-top" src="<?= $resto["pictureResto"]?>" alt="">
@@ -47,6 +48,7 @@ $restos = $_SESSION['AllResto'];
                     <p class="card-text"><?= $reservation['date']?></p>
                 </div>
             </div>
+            <?php endforeach;?>
             <?php endforeach;?>
 
             <div class="py-4 px-4">

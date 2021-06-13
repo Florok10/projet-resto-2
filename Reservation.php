@@ -36,7 +36,7 @@ class Reservation {
         $sth = $dbh->prepare("INSERT INTO `reservation`(date, choixResto) 
         VALUES (:date, :choixResto);");
         
-        $sth->bindParam(":date", $this->getDate();
+        $sth->bindParam(":date", $this->getDate());
         $sth->bindParam(":choixResto", $this->getChoixResto());
      
         $sth->execute();   
