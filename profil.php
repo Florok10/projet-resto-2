@@ -2,6 +2,10 @@
 require_once 'controllerLogin.php';
 require_once 'header.inc.php';
 
+$cookie_name = "ip";
+$cookie_value = $_SERVER["REMOTE_ADDR"];
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
 
 $users = $_SESSION['obj_user'];
 $reservations = $_SESSION['obj_reservation'];
@@ -13,6 +17,8 @@ $restos = $_SESSION['AllResto'];
 ?>
 <div id="div_scroll" class="row py-5 px-4">
     <div class="col-md-5 mx-auto">
+
+     <div><?php echosetcookie();?></div>
         
         <div class="bg-white shadow rounded overflow-hidden">
             <div class="px-4 pt-0 pb-4 cover">
