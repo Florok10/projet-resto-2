@@ -2,9 +2,11 @@
 require_once 'controllerLogin.php';
 require_once 'header.inc.php';
 
-$cookie_name = "ip";
-$cookie_value = $_SERVER["REMOTE_ADDR"];
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+// $cookie_name = "ip";
+// $cookie_value = $_SERVER["REMOTE_ADDR"];
+// $cookie_ip = setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
+$_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
 
 
 $users = $_SESSION['obj_user'];
@@ -15,12 +17,11 @@ $restos = $_SESSION['AllResto'];
 // echo $users["firstname"];
 
 ?>
-<div id="div_scroll" class="row py-5 px-4">
+<div class="row py-5 px-4">
     <div class="col-md-5 mx-auto">
 
-     <div><?php echo setcookie();?></div>
         
-        <div class="bg-white shadow rounded overflow-hidden">
+        <div id="div_scroll" class="bg-white shadow rounded overflow-hidden">
             <div class="px-4 pt-0 pb-4 cover">
                 <div class="media align-items-end profile-head">
                     <div class="col-lg-6 profile mr-3"><img src="<?= $users["picture"]?>" class="img-fluid img-thumbnail"><a href="#" class="btn btn-link">Edit profile</a></div>
@@ -31,31 +32,26 @@ $restos = $_SESSION['AllResto'];
             <div id="profil_container" class="px-4 py-3">
                 <h5 class="mb-0">A propos de vous</h5>
                 <div class="p-4 rounded shadow-sm bg-light">
+                    <p><?php echo ($_SESSION['ip']);?></p>
                     <p class="font-italic mb-0"><?= $users["firstname"]?></p>
                     <p class="font-italic mb-0"><?= $users["lastname"]?></p>
                     <p class="font-italic mb-0"><?= $users["email"]?></p>
                 </div>
-            </div>
-            <!-- Reservations -->
-            <?php foreach ($reservations as $reservation): ?>
+                <!-- Reservations -->
+                <?php foreach ($reservations as $reservation): ?>
                 <?php foreach ($restos as $resto):?>
-            <div class="px-5 py-5">
-                <div class="card-body">
-                <img class="bd-placeholder-img card-img-top" src="<?= $resto["pictureResto"]?>" alt="">
-                    <h5 class="card-title"><?= $reservation['choixResto']?></h5>
-                    <p class="card-text"><?= $resto["typeResto"]?></p>
-                    <p class="card-text"><?= $resto['descriptionOfRestaurant']?></p>
-                    <p class="card-text"><?= $reservation['date']?></p>
+                <div class="px-5 py-5">
+                    <div class="card-body">
+                    <img class="bd-placeholder-img card-img-top d-block m-auto" src="<?= $resto["pictureResto"]?>" alt="">
+                        <h5 class="card-title"><?= $reservation['choixResto']?></h5>
+                        <p class="card-text"><?= $resto["typeResto"]?></p>
+                        <p class="card-text"><?= $resto['descriptionOfRestaurant']?></p>
+                        <p class="card-text"><?= $reservation['date']?></p>
+                    </div>
                 </div>
             </div>
             <?php endforeach;?>
             <?php endforeach;?>
-
-            <div class="py-4 px-4">
-                <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h5 class="mb-0">Recent photos</h5><a href="#" class="btn btn-link text-muted">Show all</a>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -66,9 +62,11 @@ $restos = $_SESSION['AllResto'];
     ?>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js">
-        var hiddenBox = $( "#profil_container");
-        $ ("#div_scroll").scroll( function( event ){
-            hiddenBox.show();
+    </script>
+    <script>
+                var hiddenBox = $("#profil_container");
+        $ ("#div_scroll").mouseover( function( event ){
+            hiddenBox.slideDown();
         });
     </script>
 
