@@ -96,10 +96,9 @@ class User{
         try{
             $dbh= new PDO($dsn,$user,$password);
     
-        $sth = $dbh->prepare("SELECT * FROM `user` WHERE `email`=:email AND `password`=:password AND `role`=:role LIMIT 1");
+        $sth = $dbh->prepare("SELECT * FROM `user` WHERE `email`=:email AND `password`=:password LIMIT 1");
         $sth->bindParam(':email', $logs[0],PDO::PARAM_STR);
         $sth->bindParam(':password', $logs[1],PDO::PARAM_STR);
-        $sth->bindParam(':role', $logs[2], PDO::PARAM_STR);
         $sth->execute();
         $count = $sth->rowCount();
         $sth->setFetchMode(PDO::FETCH_CLASS, new User());   

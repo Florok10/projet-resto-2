@@ -43,8 +43,5 @@ require_once "DAO.php";
     $user1->envoisDonnees($dsn, $user, $password);
 
     header("Location: index.php");
-} elseif($_POST['password'] != $_POST['password_confirm']) {
-    echo 'Vos mots de passes ne correspondent pas';
-    header('Refresh:3; url=inscription.php ');
 }
 ?>

@@ -1,6 +1,8 @@
 <?php
 require_once 'controllerInscription.php';
 require_once 'header.inc.php';
+$msg_mdp = "Vos mots de passes ne correspondent pas";
+$_SESSION = [$msg_mdp];
 ?>
 
 <div class="container">
@@ -26,6 +28,11 @@ require_once 'header.inc.php';
     <label for="validationDefault05" class="form-label">Confirm password</label>
     <input type="password" class="form-control" id="validationDefault05" required name="password_confirm">
   </div>
+
+  <?php if (($_POST['paswword']) != ($_POST['password_confirm']));
+  echo($_SESSION[$msg_mdp]);
+  die; 
+?>
 
   <div class="mb-3">
   <label for="picture" class="form-label">Photo de profil</label>
