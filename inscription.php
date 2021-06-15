@@ -29,11 +29,6 @@ $_SESSION = [$msg_mdp];
     <input type="password" class="form-control" id="validationDefault05" required name="password_confirm">
   </div>
 
-  <?php if (($_POST['paswword']) != ($_POST['password_confirm']));
-  echo($_SESSION[$msg_mdp]);
-  die; 
-?>
-
   <div class="mb-3">
   <label for="picture" class="form-label">Photo de profil</label>
   <input class="form-control" type="file" id="picture" name="picture">

@@ -1,22 +1,28 @@
 <?php 
 session_start();
-require_once 'Reservation.php';
+require_once "Reservation.php";
 require_once "DAO.php";
+$_SESSION['obj_user'];
+$_SESSION['idResto'];
 
-if(isset($_POST['submitReservation'])){
-    $date = $_POST['date'];
-    $choixResto = $_POST['choixResto'];
-    if(!empty($_POST['date']) && !empty($_POST['choixResto'])){
 
-    $nvReservation = new Reservation();
+if(isset($_POST['submit'])){
+    
+    $resDate = date('Y-m-d', strtotime($_POST['res_date']));
+    $resHour = $_POST['res_heure'];
+    
+    $idClient = intval($_SESSION['obj_user']['id']);
+    $idRestaurant = intval($_SESSION['idResto']);
 
-    $nvReservation->setDate($date);
-    $nvReservation->setChoixResto($choixResto);
+    $book1 = new Booking();
 
-    $nvReservation->envoiReservation($dsn, $user, $password);
+    $book1->setDateBooking($resDate);
+    $book1->setHourBooking($resHour);
+    $book1->setClient($idClient);
+    $book1->setRestaurant($idRestaurant);
 
-    header('Location: profil.php');
-    }
+    $book1->addBooking($dsn, $user, $pw);
+    
 
 } else {
     echo 'Remplissez bien les champs.';

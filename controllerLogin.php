@@ -19,4 +19,4 @@ if(isset($_POST['submit'])){
     $logs = [$user1->getEmail(), $user1->getPassword()];
 
     $user1->login($dsn, $user, $password, $logs);
-} 
+}
