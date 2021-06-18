@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
     $idClient = intval($_SESSION['obj_user']['id']);
     $idRestaurant = intval($_SESSION['idResto']);
 
-    $book1 = new Booking();
+    // $book1 = new Booking();
 
     $book1->setDateBooking($resDate);
     $book1->setHourBooking($resHour);
