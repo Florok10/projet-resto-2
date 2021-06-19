@@ -20,6 +20,6 @@ if(isset($_POST['submit'])){
     var_dump($logs = [$user1->getEmail(), $user1->getPassword(), $user1->getRole()]);
     echo "<br> c'est bon logs crée";
 
-    var_dump($user1->login($dsn, $user, $password, $logs));
+    $user1->login($dsn, $user, $password, $logs);
     echo "<br> c'est tout bon";
 }

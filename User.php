@@ -6,11 +6,24 @@ class User{
     private $_email;
     private $_password; 
     private $_picture;
-    private $_role;
+    private $_role = function ($dsn, $user, $password){
+        try{
+            $dbh = new PDO($dsn, $user, $password);
+           
+        }
+        catch(PDOException $e){
+            $e->getMessage();
+
+        }
+        $sth = $dbh->prepare("SELECT * FROM `user` WHERE `roleUser`=:roleUSer");
+        $sth->bindParam(":roleUser", $this->getRoleUser());
+        $sth->execute();
+        $result = $sth->fetchAll();
+    }
 
 
     function __construct(){
-
+        
     }
 
 
@@ -83,14 +96,13 @@ class User{
 
         }
 
-        $sth = $dbh->prepare("INSERT INTO user(firstname, lastname, email, password, picture, roleUser) VALUES (:firstname, :lastname, :email, :password, :picture, :roleUser);");
+        $sth = $dbh->prepare("INSERT INTO user(firstname, lastname, email, password, picture) VALUES (:firstname, :lastname, :email, :password, :picture);");
         
         $sth->bindParam(":firstname", $this->getFirstName());
         $sth->bindParam(":lastname", $this->getLastName());
         $sth->bindParam(":email", $this->getEmail());
         $sth->bindParam(":password", $this->getPassword());
         $sth->bindParam(":picture", $this->getPicture());
-        $sth->bindParam(":RoleUser", $this->getRole());
      
         $sth->execute();   
 
@@ -100,10 +112,10 @@ class User{
         try{
             $dbh= new PDO($dsn,$user,$password);
     
-        $sth = $dbh->prepare("SELECT * FROM `user` WHERE `email`=:email AND `password`=:password AND `roleUser`=:roleUser LIMIT 1");
+        $sth = $dbh->prepare("SELECT * FROM `user` WHERE `email`=:email AND `password`=:password LIMIT 1");
         $sth->bindParam(':email', $logs[0],PDO::PARAM_STR);
         $sth->bindParam(':password', $logs[1],PDO::PARAM_STR);
-        $sth->bindParam(':roleUser', $logs[2],PDO::PARAM_INT);
+        $sth->bindParam($role, $logs[2,PDO::PARAM_STR]);
         $sth->execute();
         $count = $sth->rowCount();
         $sth->setFetchMode(PDO::FETCH_CLASS, new User());   
