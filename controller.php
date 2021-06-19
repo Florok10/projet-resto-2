@@ -6,11 +6,11 @@ require_once "DAO.php";
 
 if(isset($_POST['submit'])){
     
-    $name = $_POST['nameResto'];
-    $address = $_POST['addressResto'];
+    $nameResto = $_POST['nameResto'];
+    $addressResto = $_POST['addressResto'];
     $pictureResto = $_POST['pictureResto'];
-    $type = $_POST['typeResto'];
-    $description = $_POST['descriptionResto'];
+    $typeResto = $_POST['typeResto'];
+    $descriptionResto = $_POST['descriptionResto'];
 
     if (isset($_FILES['pictureResto']) && $_FILES['pictureResto']['error'] == 0) {
         echo "c'est bon";
@@ -36,17 +36,17 @@ if(isset($_POST['submit'])){
 
     $resto = new Resto();
 
-    $resto->setName($name);
-    $resto->setAddress($address);
-    $resto->setType($type);
+    $resto->setNameResto($nameResto);
+    $resto->setAddressResto($addressResto);
+    $resto->setTypeResto($typeResto);
     $resto->setPictureResto($target_file);
-    $resto->setDescription($description);
+    $resto->setDescriptionResto($descriptionResto);
 
     $resto->envoisDonnees($dsn,$user,$password);
 
     
 
-    echo "Le restaurant" . " " . $name . " " . "a bien été ajouté à la liste des Restaurants";
+    echo "Le restaurant" . " " . $nameResto . " " . "a bien été ajouté à la liste des Restaurants";
 
     header("Locate: listResto.php");
 

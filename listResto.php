@@ -17,13 +17,14 @@ session_start();
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
          <?php foreach ($restos as $resto ) : ?>       
             <tr>
-              <td><?= $resto['nameOfResto'];?></td>
-              <td><?= $resto['adressOfResto'];?></td>
-              <td><?= $resto['typeOfResto'];?></td>
+              <td><?= $resto['nameResto'];?></td>
+              <td><?= $resto['addressResto'];?></td>
+              <td><?= $resto['typeResto'];?></td>
+              <td><img href="<?= $resto['pictureResto'];?>" alt="Image du restaurant"></td>
               <td style="width=200;">
                 <!-- pour que $_GET['id'] puisse récupèrer l'id via url pour la requete de la méthode voirResto -->
-                <?php echo "<a class='btn btn-info' href='voirResto.php?id='.$resto['id_resto']>Voir</a>";?>
-                                        <?= "<a class='btn btn-danger' href="reservResto.php?id="'.$resto->id_resto'>Résever</a>'?>
+                <?php echo "<a class='btn btn-info' href='voirResto.php?id='.$resto[id_resto]>Voir</a>";?>
+                <?= "<a class='btn btn-danger' href='reservResto.php?id='.$resto[id_resto]>Résever</a>"?>
               </td>
           </tr>
       <?php endforeach; ?>    

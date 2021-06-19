@@ -2,32 +2,31 @@
 
 class Resto{
 
-    private $_id;
-    private $_name;
-    private $_address;
+    private $_nameResto;
+    private $_addressResto;
     private $_pictureResto;
-    private $_type;
-    private $_description;
+    private $_typeResto;
+    private $_descriptionResto;
 
     
     public function __construct(){
 
     }
 
-    public function setName($name){
-        $this->_name = $name;
+    public function setNameResto($nameResto){
+        $this->_nameResto = $nameResto;
     }
 
-    public function getName(){
-        return $this->_name;
+    public function getNameResto(){
+        return $this->_nameResto;
     }
 
-    public function setAddress($address){
-        $this->_address = $address;
+    public function setAddressResto($addressResto){
+        $this->_addressResto = $addressResto;
     }
 
-    public function getAddress(){
-        return $this->_address;
+    public function getAddressResto(){
+        return $this->_addressResto;
     }
     public function setPictureResto($pictureResto){
         $this->_pictureResto = $pictureResto;
@@ -36,20 +35,20 @@ class Resto{
     public function getPictureResto(){
         return $this->_pictureResto;
     }
-    public function setType($type){
-        $this->_type = $type;
+    public function setTypeResto($typeResto){
+        $this->_typeResto = $typeResto;
     }
 
-    public function getType(){
-        return $this->_type;
+    public function getTypeResto(){
+        return $this->_typeResto;
     }
     
-    public function setDescription($description){
-        $this->_description = $description;
+    public function setDescriptionResto($descriptionResto){
+        $this->_descriptionResto = $descriptionResto;
     }
 
-    public function getDescription(){
-        return $this->_description;
+    public function getDescriptionResto(){
+        return $this->_descriptionResto;
     }
 
     
@@ -64,11 +63,11 @@ class Resto{
         $sth= $dbh->prepare("INSERT INTO `restaurant_template`(`nameResto`, `addressResto`, `typeResto`, `pictureResto`, `descriptionResto`) 
         VALUES(:nameResto, :addressResto, :typeResto, :pictureResto, :descriptionResto);");
 
-        $sth->bindParam(':nameResto', $this->getName());
-        $sth->bindParam(':addressResto', $this->getAddress());
-        $sth->bindParam(':typeResto', $this->getType());
+        $sth->bindParam(':nameResto', $this->getNameResto());
+        $sth->bindParam(':addressResto', $this->getAddressResto());
+        $sth->bindParam(':typeResto', $this->getTypeResto());
         $sth->bindParam(':pictureResto', $this->getPictureResto());
-        $sth->bindParam(':descriptionResto', $this->getDescription());
+        $sth->bindParam(':descriptionResto', $this->getDescriptionResto());
 
         $sth->execute();
     }
