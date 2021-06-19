@@ -1,3 +1,5 @@
+<?php $users = $_SESSION['obj_user']; ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -40,7 +42,7 @@ if($statusSession == 2) : ?>
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="profil.php">Profil</a>
         <!-- <a class="nav-link" href="#">Réservation</a> -->
-        <?php if($user['role'] == 2) : ?><a class="nav-link" href="ajouterRestaurant.php">Ajout Resto</a><?php endif; ?>
+        <?php if($users['roleUser'] === 2) : ?><a class="nav-link" href="ajouterRestaurant.php">Ajout $users = $_SESSION['obj_user'];Resto</a><?php endif; ?>
         <a type="button" class="btn btn-primary" href="logout.php">Se déconnecter</a>
       </div>
     </div>

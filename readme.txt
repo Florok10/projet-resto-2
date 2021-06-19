@@ -10,3 +10,6 @@ j'ai bossé sur ma bdd surtout pour lier les tables, là je m'absente pour raiso
 je n'arrive pas à login quand j'essaye d'ajouter role dans l'opération
 
 je pense que le problème vient du moment où je dois récupérer le role dans la bdd ça coince
+
+je veux réussir le mode admin à ma façon mais ça me bloque depuis des heures, je pensais avoir
+trouvé la solution mais ça ne fonctionne toujours pas
