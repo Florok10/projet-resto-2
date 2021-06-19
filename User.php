@@ -6,12 +6,12 @@ class User{
     private $_email;
     private $_password; 
     private $_picture;
-    private $_role = $roleUser;
+    private $_role;
 
 
-    function __construct(){
+    // function __construct(){
         
-    }
+    // }
 
 
     public function setId($id){
@@ -71,20 +71,23 @@ class User{
         return $this->_picture;
     }
 
-    public function recupRole($dsn, $user, $password){
-        try{
-            $dbh = new PDO($dsn, $user, $password);
+    // public function recupRole($dsn, $user, $password){
+    //     try{
+    //         $dbh = new PDO($dsn, $user, $password);
            
-        }
-        catch(PDOException $e){
-            $e->getMessage();
+    //     }
+    //     catch(PDOException $e){
+    //         $e->getMessage();
 
-        }
-        $sth = $dbh->prepare("SELECT * FROM `user` WHERE `roleUser`=:roleUSer");
-        $roleUser =':roleUser';
+    //     }
+    //     $sth = $dbh->prepare("SELECT * FROM `user` WHERE `roleUser`=:roleUSer");
+    //     $sth->bindParam(":roleUser", $this->getRole());
+    //     $sth->execute();
 
-        return $this->roleUser;
-    }
+    //     $count = $sth->rowCount();
+    //     $result = $sth->fetchAll();
+
+    // }
 
     public function envoisDonnees($dsn, $user, $password){
 
@@ -117,7 +120,6 @@ class User{
         $sth = $dbh->prepare("SELECT * FROM `user` WHERE `email`=:email AND `password`=:password LIMIT 1");
         $sth->bindParam(':email', $logs[0],PDO::PARAM_STR);
         $sth->bindParam(':password', $logs[1],PDO::PARAM_STR);
-        $sth->bindParam($role, $logs[2,PDO::PARAM_STR]);
         $sth->execute();
         $count = $sth->rowCount();
         $sth->setFetchMode(PDO::FETCH_CLASS, new User());   
@@ -134,6 +136,9 @@ class User{
             $_SESSION['obj_user'] = $result;
             header("Location: profil.php");
     
+        } else {
+            header("Location: index.php");
+            echo 'La connexion a échoué';
         }
             
     }

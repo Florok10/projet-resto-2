@@ -31,10 +31,10 @@ $restos = $_SESSION['AllResto'];
             <div id="profil_container" class="px-4 py-3">
                 <h3 class="mb-4 text-center">A propos de vous</h5>
                 <div class="p-4 rounded shadow-lg bg-light">
-                    <p class="font-italic mb-0">Votre ip est :<?php echo ' ' . (setcookie($cookie_value));?></p>
-                    <p class="font-italic mb-0">Prénom :<?= ' ' . $users["firstname"]?></p>
-                    <p class="font-italic mb-0">Nom :<?= ' ' . $users["lastname"]?></p>
-                    <p class="font-italic mb-0">Email :<?= ' ' . $users["email"]?></p>
+                    <p class="font-italic mb-1">Votre ip est :<?php echo ' ' . (setcookie($cookie_value));?></p>
+                    <p class="font-italic mb-1">Prénom :<?= ' ' . $users["firstname"]?></p>
+                    <p class="font-italic mb-1">Nom :<?= ' ' . $users["lastname"]?></p>
+                    <p class="font-italic mb-1">Email :<?= ' ' . $users["email"]?></p>
                 </div>
                 <!-- Reservations -->
                 <div class="px-5 py-5">

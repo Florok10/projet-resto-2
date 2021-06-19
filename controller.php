@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
 
     echo "Le restaurant" . " " . $nameResto . " " . "a bien été ajouté à la liste des Restaurants";
 
-    header("Locate: listResto.php");
+    header("Location: listResto.php");
 
 
 

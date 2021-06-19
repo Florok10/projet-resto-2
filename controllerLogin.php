@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
     var_dump($user1->setPassword($mdp));
     echo "<br> c'est bon mdp associé";
     
-    var_dump($logs = [$user1->getEmail(), $user1->getPassword(), $user1->getRole()]);
+    var_dump($logs = [$user1->getEmail(), $user1->getPassword()]);
     echo "<br> c'est bon logs crée";
 
     $user1->login($dsn, $user, $password, $logs);
