@@ -1,6 +1,7 @@
 <?php 
     session_start();
     $_SESSION['idResto']=$_GET['id'];
+    $title = 'Réserver';
     require_once 'header.inc.php';
 ?>
 

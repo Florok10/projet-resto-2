@@ -1,5 +1,6 @@
 <?php
 require_once 'controllerInscription.php';
+$title = 'Inscription';
 require_once 'header.inc.php';
 $msg_mdp = "Vos mots de passes ne correspondent pas";
 $_SESSION = [$msg_mdp];

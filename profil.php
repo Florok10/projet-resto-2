@@ -1,10 +1,11 @@
 <?php
 require_once 'controllerLogin.php';
+$title = 'Profil';
 require_once 'header.inc.php';
 
 $cookie_name = "ip";
 $cookie_value = $_SERVER["REMOTE_ADDR"];
-$cookie_ip = setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+$cookie_ip = setcookie($cookie_name, $cookie_value, time() + (3600 * 24), "/");
 
 
 $users = $_SESSION['obj_user'];
@@ -22,34 +23,28 @@ $restos = $_SESSION['AllResto'];
         <div id="div_scroll" class="bg-white shadow rounded overflow-hidden">
             <div class="px-4 pt-0 pb-4 cover">
                 <div class="media align-items-end profile-head">
-                    <div class="col-lg-6 profile mr-3"><img src="<?= $users["picture"]?>" class="img-fluid img-thumbnail"><a href="#" class="btn btn-link">Edit profile</a></div>
-                    
+                    <div class="col-lg-6 profile mr-3"><img src="<?= $users["picture"]?>" class="img-thumbnail d-block mx-auto"><a href="#" class="btn btn-link">Modifier votre profil</a></div>
+                    <div class="mb-0 text-center">Ici pour voir vos informations</div>
                 </div>
             </div>
          
             <div id="profil_container" class="px-4 py-3">
-                <h5 class="mb-0">A propos de vous</h5>
-                <div class="p-4 rounded shadow-sm bg-light">
+                <h3 class="mb-4 text-center">A propos de vous</h5>
+                <div class="p-4 rounded shadow-lg bg-light">
                     <p class="font-italic mb-0">Votre ip est :<?php echo ' ' . (setcookie($cookie_value));?></p>
-                    <p class="font-italic mb-0"><?= $users["firstname"]?></p>
-                    <p class="font-italic mb-0"><?= $users["lastname"]?></p>
-                    <p class="font-italic mb-0"><?= $users["email"]?></p>
+                    <p class="font-italic mb-0">Prénom :<?= ' ' . $users["firstname"]?></p>
+                    <p class="font-italic mb-0">Nom :<?= ' ' . $users["lastname"]?></p>
+                    <p class="font-italic mb-0">Email :<?= ' ' . $users["email"]?></p>
                 </div>
                 <!-- Reservations -->
-                <?php foreach ($reservations as $reservation): ?>
-                <?php foreach ($restos as $resto):?>
                 <div class="px-5 py-5">
+                    <h2 class="h2 text-center">Vos réservations</h2>
                     <div class="card-body">
                     <img class="bd-placeholder-img card-img-top d-block m-auto" src="<?= $resto["pictureResto"]?>" alt="">
                         <h5 class="card-title"><?= $reservation['choixResto']?></h5>
-                        <p class="card-text"><?= $resto["typeResto"]?></p>
-                        <p class="card-text"><?= $resto['descriptionOfRestaurant']?></p>
-                        <p class="card-text"><?= $reservation['date']?></p>
                     </div>
                 </div>
             </div>
-            <?php endforeach;?>
-            <?php endforeach;?>
         </div>
     </div>
 </div>
