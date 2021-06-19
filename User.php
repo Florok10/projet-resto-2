@@ -1,8 +1,6 @@
 <?php
 
 class User{
-    private $_id;
-    private $_role;
     private $_firstname;
     private $_lastname;
     private $_email;
@@ -87,7 +85,6 @@ class User{
         $sth->bindParam(":email", $this->getEmail());
         $sth->bindParam(":password", $this->getPassword());
         $sth->bindParam(":picture", $this->getPicture());
-        $sth->bindParam(":role", $this->getRole());
      
         $sth->execute();   
 
@@ -97,7 +94,7 @@ class User{
         try{
             $dbh= new PDO($dsn,$user,$password);
     
-        $sth = $dbh->prepare("SELECT * FROM `user` WHERE `email`=:email AND `password`=:password LIMIT 1");
+        $sth = $dbh->prepare("SELECT * FROM `user` WHERE `email`=:email AND `password`=:password AND `role`=:role LIMIT 1");
         $sth->bindParam(':email', $logs[0],PDO::PARAM_STR);
         $sth->bindParam(':password', $logs[1],PDO::PARAM_STR);
         $sth->bindParam(':role', $logs[2],PDO::PARAM_STR);
