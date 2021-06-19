@@ -6,7 +6,12 @@ class User{
     private $_email;
     private $_password; 
     private $_picture;
+    private $_role;
 
+
+    function __construct(){
+
+    }
 
 
     public function setId($id){
@@ -78,13 +83,14 @@ class User{
 
         }
 
-        $sth = $dbh->prepare("INSERT INTO user(firstname, lastname, email, password, picture) VALUES (:firstname, :lastname, :email, :password, :picture);");
+        $sth = $dbh->prepare("INSERT INTO user(firstname, lastname, email, password, picture, roleUser) VALUES (:firstname, :lastname, :email, :password, :picture, :roleUser);");
         
         $sth->bindParam(":firstname", $this->getFirstName());
         $sth->bindParam(":lastname", $this->getLastName());
         $sth->bindParam(":email", $this->getEmail());
         $sth->bindParam(":password", $this->getPassword());
         $sth->bindParam(":picture", $this->getPicture());
+        $sth->bindParam(":RoleUser", $this->getRole());
      
         $sth->execute();   
 
@@ -94,17 +100,17 @@ class User{
         try{
             $dbh= new PDO($dsn,$user,$password);
     
-        $sth = $dbh->prepare("SELECT * FROM `user` WHERE `email`=:email AND `password`=:password AND `role`=:role LIMIT 1");
+        $sth = $dbh->prepare("SELECT * FROM `user` WHERE `email`=:email AND `password`=:password AND `roleUser`=:roleUser LIMIT 1");
         $sth->bindParam(':email', $logs[0],PDO::PARAM_STR);
         $sth->bindParam(':password', $logs[1],PDO::PARAM_STR);
-        $sth->bindParam(':role', $logs[2],PDO::PARAM_STR);
+        $sth->bindParam(':roleUser', $logs[2],PDO::PARAM_INT);
         $sth->execute();
         $count = $sth->rowCount();
         $sth->setFetchMode(PDO::FETCH_CLASS, new User());   
          
         $result = $sth->fetch();
     
-        echo var_dump($result);
+        var_dump($result);
         }catch(PDOException $e){
             $e->getMessage();
         }
@@ -114,8 +120,6 @@ class User{
             $_SESSION['obj_user'] = $result;
             header("Location: profil.php");
     
-        }else{
-            header("Location: index.php");
         }
             
     }

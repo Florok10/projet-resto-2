@@ -9,19 +9,17 @@ if(isset($_POST['submit'])){
     $mdp = $_POST['password'];
     echo "c'est bon";
  
-    $user1 = new User();
-    echo "c'est bon";
+    var_dump($user1 = new User());
+    echo "<br> c'est bon user crée";
 
-    $user1->setEmail($email);
-    echo "c'est bon";
-    $user1->setPassword($mdp);
-    echo "c'est bon";
-    $user1->setRole($role);
-    echo "c'est bon";
+    var_dump($user1->setEmail($email));
+    echo "<br> c'est bon mail associé";
+    var_dump($user1->setPassword($mdp));
+    echo "<br> c'est bon mdp associé";
     
-    $logs = [$user1->getEmail(), $user1->getPassword(), $user1->getRole()];
-    echo "c'est bon";
+    var_dump($logs = [$user1->getEmail(), $user1->getPassword(), $user1->getRole()]);
+    echo "<br> c'est bon logs crée";
 
-    $user1->login($dsn, $user, $password, $logs);
-    echo "c'est bon";
+    var_dump($user1->login($dsn, $user, $password, $logs));
+    echo "<br> c'est tout bon";
 }
