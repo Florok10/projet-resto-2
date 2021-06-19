@@ -6,20 +6,7 @@ class User{
     private $_email;
     private $_password; 
     private $_picture;
-    private $_role = function ($dsn, $user, $password){
-        try{
-            $dbh = new PDO($dsn, $user, $password);
-           
-        }
-        catch(PDOException $e){
-            $e->getMessage();
-
-        }
-        $sth = $dbh->prepare("SELECT * FROM `user` WHERE `roleUser`=:roleUSer");
-        $sth->bindParam(":roleUser", $this->getRoleUser());
-        $sth->execute();
-        $result = $sth->fetchAll();
-    }
+    private $_role = $roleUser;
 
 
     function __construct(){
@@ -82,6 +69,21 @@ class User{
 
     public function getPicture(){
         return $this->_picture;
+    }
+
+    public function recupRole($dsn, $user, $password){
+        try{
+            $dbh = new PDO($dsn, $user, $password);
+           
+        }
+        catch(PDOException $e){
+            $e->getMessage();
+
+        }
+        $sth = $dbh->prepare("SELECT * FROM `user` WHERE `roleUser`=:roleUSer");
+        $roleUser =':roleUser';
+
+        return $this->roleUser;
     }
 
     public function envoisDonnees($dsn, $user, $password){
