@@ -1,7 +1,6 @@
 <?php
 require_once 'controllerLogin.php';
 $title = 'Profil';
-require_once 'header.inc.php';
 
 $cookie_name = "ip";
 $cookie_value = $_SERVER["REMOTE_ADDR"];
@@ -11,6 +10,8 @@ $cookie_ip = setcookie($cookie_name, $cookie_value, time() + (3600 * 24), "/");
 $users = $_SESSION['obj_user'];
 $reservations = $_SESSION['obj_reservation'];
 $restos = $_SESSION['AllResto'];
+
+require_once 'header.inc.php';
 
 // echo var_dump($users);
 // echo $users["firstname"];

@@ -13,3 +13,6 @@ je pense que le problème vient du moment où je dois récupérer le role dans l
 
 je veux réussir le mode admin à ma façon mais ça me bloque depuis des heures, je pensais avoir
 trouvé la solution mais ça ne fonctionne toujours pas
+
+je ne comprends pas pourquoi le roleUser n'est pas lié à ma session alors que je l'ari
+fait dans le user.php, je vais regarder des tutos si je ne m'endors pas je continuerai de coder
