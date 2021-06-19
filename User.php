@@ -87,6 +87,7 @@ class User{
         $sth->bindParam(":email", $this->getEmail());
         $sth->bindParam(":password", $this->getPassword());
         $sth->bindParam(":picture", $this->getPicture());
+        $sth->bindParam(":role", $this->getRole());
      
         $sth->execute();   
 
@@ -99,6 +100,7 @@ class User{
         $sth = $dbh->prepare("SELECT * FROM `user` WHERE `email`=:email AND `password`=:password LIMIT 1");
         $sth->bindParam(':email', $logs[0],PDO::PARAM_STR);
         $sth->bindParam(':password', $logs[1],PDO::PARAM_STR);
+        $sth->bindParam(':role', $logs[2],PDO::PARAM_STR);
         $sth->execute();
         $count = $sth->rowCount();
         $sth->setFetchMode(PDO::FETCH_CLASS, new User());   

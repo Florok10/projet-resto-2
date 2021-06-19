@@ -20,14 +20,14 @@ session_start();
               <td><?= $resto['nameResto'];?></td>
               <td><?= $resto['addressResto'];?></td>
               <td><?= $resto['typeResto'];?></td>
-              <td><img href="<?= $resto['pictureResto'];?>" alt="Image du restaurant"></td>
+              <td><?= $resto['pictureResto'];?>" alt="Image du restaurant"></td>
               <td style="width=200;">
                 <!-- pour que $_GET['id'] puisse récupèrer l'id via url pour la requete de la méthode voirResto -->
                 <?php echo "<a class='btn btn-info' href='voirResto.php?id='.$resto[id_resto]>Voir</a>";?>
-                <?= "<a class='btn btn-danger' href='reservResto.php?id='.$resto[id_resto]>Résever</a>"?>
+                <?= "<a class='btn btn-danger' href='reservResto.php?id='.$resto[id_resto]>Résever</a>";?>
               </td>
           </tr>
-      <?php endforeach; ?>    
+      <?php endforeach; ?>
       </div>
     </div>
   </div>
