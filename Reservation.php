@@ -7,7 +7,7 @@ class Booking{
     private $_idBooking;
     private $_dateBooking;
     private $_hourBooking;
-    private $_user;
+    private $_client;
     private $_restaurant;
 
 
@@ -35,10 +35,8 @@ class Booking{
         $this->_hourBooking = $hourBooking;
     }
 
-    public function getuser
-    
-    (){
-        return $this->_user;
+    public function getClient(){
+        return $this->_client;
     }
 
     public function setClient($client){
@@ -73,7 +71,7 @@ class Booking{
         $maRequet = $dbh->prepare($requete);
         //relie les variable avec les element en attente pour la requete
         $maRequet->bindParam(':dateBooking', $this->getdateBooking());
-        $maRequet->bindParam(':id_client', $this->getClient());
+        $maRequet->bindParam(':id_user', $this->getClient());
         $maRequet->bindParam(':id_restaurant', $this->getRestaurant());
         $maRequet->bindParam(':hourBooking', $this->gethourBooking());
 
