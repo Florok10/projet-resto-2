@@ -17,16 +17,18 @@ if(isset($_POST['submit'])){
     }
     
     $target_dir = './uploads/';
+
+    $namePictureResto= preg_replace('/\s+/', '', $nameResto); 
     
    
     $informationsImage = pathinfo($_FILES['pictureResto']['name']);
-   
+    var_dump($extensionImage);
     $extensionImage = strtolower($informationsImage['extension']);
     
-    $target_file = $target_dir .  $name . "." .$extensionImage;
-    echo $target_file;
+    $target_file_resto = $target_dir .  $namePictureResto . "." .$extensionImage;
+    echo $target_file_resto;
 
-    if (move_uploaded_file($_FILES['pictureResto']['tmp_name'], $target_file)) {
+    if (move_uploaded_file($_FILES['pictureResto']['tmp_name'], $target_file_resto)) {
         echo "The file ". basename( $_FILES["pictureResto"]["name"]). " has been uploaded.";
     } else {
 
@@ -39,7 +41,7 @@ if(isset($_POST['submit'])){
     $resto->setNameResto($nameResto);
     $resto->setAddressResto($addressResto);
     $resto->setTypeResto($typeResto);
-    $resto->setPictureResto($target_file);
+    $resto->setPictureResto($target_file_resto);
     $resto->setDescriptionResto($descriptionResto);
 
     $resto->envoisDonnees($dsn,$user,$password);
