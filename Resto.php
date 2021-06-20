@@ -72,6 +72,26 @@ class Resto{
         $sth->execute();
     }
 
+    public function voirResto(){
+        require_once 'DAO.php';
+        
+        $db = DAO::connect();
+        
+        $requete = "SELECT * FROM restaurant_template WHERE id_resto= :id_resto";
+
+        $maRequet = $db->prepare($requete);
+
+        $maRequet->execute('id_resto' -> $_GET['id_resto']);
+
+        $maRequet->setFetchMode(PDO::FETCH_CLASS, "Resto");
+
+        $resto = $maRequet->fetch();
+
+        return $resto;
+
+        DAO::disconnect();
+    }
+
     public function recupDonnees($dsn,$user,$password){
 
         try{
