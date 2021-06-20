@@ -3,7 +3,7 @@ session_start();
 require_once "Reservation.php";
 require_once "DAO.php";
 $_SESSION['obj_user'];
-$_SESSION['idResto'];
+$_SESSION['id_resto'];
 
 
 if(isset($_POST['submit'])){
@@ -11,8 +11,8 @@ if(isset($_POST['submit'])){
     $resDate = date('Y-m-d', strtotime($_POST['res_date']));
     $resHour = $_POST['res_heure'];
     
-    $idClient = intval($_SESSION['obj_user']['id']);
-    $idRestaurant = intval($_SESSION['idResto']);
+    $idUser = intval($_SESSION['obj_user']['id_user']);
+    $idRestaurant = intval($_SESSION['id_resto']);
 
     // $book1 = new Booking();
 

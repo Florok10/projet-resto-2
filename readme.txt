@@ -16,3 +16,6 @@ trouvé la solution mais ça ne fonctionne toujours pas
 
 je ne comprends pas pourquoi le roleUser n'est pas lié à ma session alors que je l'ari
 fait dans le user.php, je vais regarder des tutos si je ne m'endors pas je continuerai de coder
+
+j'ai bossé sur la reservation ce matin et ma logique, j'ai la tête qui tourne je me sens 
+vraiment pas bien du tout j'arrête pour le moment
