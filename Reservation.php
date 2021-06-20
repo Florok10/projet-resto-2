@@ -36,23 +36,23 @@ class Booking{
     }
 
     public function setUser($user){
-        $this->_client = $user;
+        $this->_user = $user;
     }
 
     public function getUser(){
         return $this->_user;
     }
 
-    public function getRestaurant(){
+    public function getResto(){
         return $this->_restaurant;
     }
 
-    public function setRestaurant($restaurant){
+    public function setResto($restaurant){
         $this->_restaurant = $restaurant;
     }
 
     //reserver un resto
-    public function addBooking($dsn, $user, $pw){
+    public function addBooking($dsn, $user, $password){
 
         // se connecte
         try{
@@ -64,13 +64,13 @@ class Booking{
         }
 
         //la requete 
-        $requete = "INSERT INTO Reservation (dateBooking, id_user, id_restaurant, hourBooking) VALUES (:dateBooking, :id_user, :id_restaurant, :hourBooking);";
+        $requete = "INSERT INTO reservation (dateBooking, id_user, id_resto, hourBooking) VALUES (:dateBooking, :id_user, :id_resto, :hourBooking);";
         //on prepare la requete 
         $maRequet = $dbh->prepare($requete);
         //relie les variable avec les element en attente pour la requete
-        $maRequet->bindParam(':dateBooking', $this->getdateBooking());
-        $maRequet->bindParam(':id_user', $this->$this->user->id_user);
-        $maRequet->bindParam(':id_restaurant', $this->getRestaurant());
+        $maRequet->bindParam(':dateBooking', $this->getDateBooking());
+        $maRequet->bindParam(':id_user', $this->getUser());
+        $maRequet->bindParam(':id_restaurant', $this->getResto());
         $maRequet->bindParam(':hourBooking', $this->gethourBooking());
 
         //excute la requete

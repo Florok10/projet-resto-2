@@ -24,8 +24,8 @@ require_once 'Resto.php';
             <td><?= $resto['typeResto']?></td><br>
             <td><img class="img-thumbnail" src="<?= $resto['pictureResto'];?>" alt="Image du restaurant"></td>
             <td>
-              <a class="btn btn-info" href="voirResto.php?id=<?= $resto['id_resto']?>&nameResto=<?= $resto['nameResto']?>&pictureResto=<?= $resto['pictureResto']?>&typeResto=<?= $resto['typeResto']?>&descriptionResto=<?= $resto['descriptionResto']?>">Voir</a>
-              <a class="btn btn-danger" href="nvReservation.php?id=<?= $resto['id_resto']?>&nameResto=<?= $resto['nameResto']?>&pictureResto=<?= $resto['pictureResto']?>&typeResto=<?= $resto['typeResto']?>&descriptionResto=<?= $resto['descriptionResto']?>">Résever</a>
+              <a class="btn btn-info" href="voirResto.php?idResto=<?= $resto['id_resto']?>&nameResto=<?= $resto['nameResto']?>&pictureResto=<?= $resto['pictureResto']?>&typeResto=<?= $resto['typeResto']?>&descriptionResto=<?= $resto['descriptionResto']?>">Voir</a>
+              <a class="btn btn-danger" href="nvReservation.php?idResto=<?= $resto['id_resto']?>&nameResto=<?= $resto['nameResto']?>&pictureResto=<?= $resto['pictureResto']?>&typeResto=<?= $resto['typeResto']?>&descriptionResto=<?= $resto['descriptionResto']?>">Résever</a>
             </td>
           </tr>
           </table>

@@ -42,7 +42,7 @@
                             
                 <div class="col-12 justify-content-center mb-1" style="margin-top:30px;"> 
                    <a href="listResto.php" class="btn btn-success">Retour à la liste des resrtaurants</a>
-                   <a class="btn btn-danger" href="nvReservation.php?id=<?= $_GET['id_resto']?>&nameResto=<?= $_GET['nameResto']?>&pictureResto=<?= $_GET['pictureResto']?>">Résever</a>
+                   <a class="btn btn-danger" href="nvReservation.php?idResto=<?= $_GET['id_resto']?>&nameResto=<?= $_GET['nameResto']?>&pictureResto=<?= $_GET['pictureResto']?>">Résever</a>
                 </div>
 
             </div>

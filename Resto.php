@@ -9,6 +9,14 @@ class Resto{
     private $_descriptionResto;
 
 
+    public function setResto($idResto){
+        $this->_idResto = $idResto;
+    }
+
+    public function getResto(){
+        return $this->_idResto;
+    }
+
     public function setNameResto($nameResto){
         $this->_nameResto = $nameResto;
     }

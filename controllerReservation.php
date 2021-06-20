@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require_once "Reservation.php";
+// require_once "Resto.php";
 require_once "DAO.php";
 $_SESSION['obj_user'];
 
@@ -14,8 +15,8 @@ if(isset($_POST['submit'])){
     $resHour = $_POST['hourBooking'];
     
     $idUser = intval($_SESSION['obj_user']['id_user']);
-    $idResto = intval($_GET['id_resto']);
-    var_dump($id_resto);
+    $idResto = $_POST['id_resto'];
+    var_dump($idResto);
 
      $book1 = new Booking();
 
