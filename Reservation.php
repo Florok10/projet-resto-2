@@ -10,37 +10,44 @@ class Booking{
     private $_user;
     private $_restaurant;
 
-
-    public function getIdBooking(){
-        return $this->_idBooking;
+    public function __construct($booking_date,$booking_hour,$booking_count,$client,$resto){
+        $this->booking_date = $booking_date;
+        $this->booking_hour = $booking_hour;
+        $this->booking_count = $booking_count;
+        $this->user = $user;
+        $this->resto = $resto;
     }
 
     public function setIdBooking($idBooking){
         $this->_idBooking = $idBooking;
     }
 
-    public function getDateBooking(){
-        return $this->_dateBooking;
+    public function getIdBooking(){
+        return $this->_idBooking;
     }
 
     public function setDateBooking($dateBooking){
         $this->_dateBooking = $dateBooking;
     }
 
-    public function getHourBooking(){
-        return $this->_hourBooking;
+    public function getDateBooking(){
+        return $this->_dateBooking;
     }
     
     public function setHourBooking($hourBooking){
         $this->_hourBooking = $hourBooking;
     }
 
-    public function getUser(){
-        return $this->_user;
+    public function getHourBooking(){
+        return $this->_hourBooking;
     }
 
     public function setUser($user){
         $this->_client = $user;
+    }
+
+    public function getUser(){
+        return $this->_user;
     }
 
     public function getRestaurant(){
@@ -51,14 +58,12 @@ class Booking{
         $this->_restaurant = $restaurant;
     }
 
-    
-
     //reserver un resto
     public function addBooking($dsn, $user, $pw){
 
         // se connecte
         try{
-            $dbh = new PDO($dsn, $user, $pw);
+            $dbh = new PDO($dsn, $user, $password);
            
         }
         catch(PDOException $e){
@@ -71,7 +76,7 @@ class Booking{
         $maRequet = $dbh->prepare($requete);
         //relie les variable avec les element en attente pour la requete
         $maRequet->bindParam(':dateBooking', $this->getdateBooking());
-        $maRequet->bindParam(':id_user', $this->getUser());
+        $maRequet->bindParam(':id_user', $this->$this->user->id_user);
         $maRequet->bindParam(':id_restaurant', $this->getRestaurant());
         $maRequet->bindParam(':hourBooking', $this->gethourBooking());
 
@@ -80,6 +85,19 @@ class Booking{
        
         header("Location: profil.php");
 
+    }
+
+    // retourne le nombre de reservation par client
+    public function countBooking($client){
+        require_once 'DAO.php';
+
+        $db = DAO::connect();
+        $req = $bdd->query("SELECT  COUNT($client) as Nbrbook FROM Booking" );
+        $donnees = $req->fetch();
+        $req->closeCursor();
+        $total= $donnees['Nbrbook'];
+
+        return $total;
     }
 
     public function recupBooking($dsn,$user,$password){
