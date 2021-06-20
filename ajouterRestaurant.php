@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'controller.php';
+$users = $_SESSION['obj_user'];
 require_once 'header.inc.php';
 ?>
 

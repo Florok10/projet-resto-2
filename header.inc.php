@@ -1,4 +1,4 @@
-
+<?php $users = $_SESSION['obj_user']; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

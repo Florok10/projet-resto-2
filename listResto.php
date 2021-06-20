@@ -3,6 +3,7 @@ session_start();
 require_once 'Resto.php';
  require_once 'controllerResto.php';
  $restos = $_SESSION['AllResto'];
+ $users = $_SESSION['obj_user'];
  $title = 'Restaurants';
  require_once 'header.inc.php';
 
