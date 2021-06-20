@@ -1,17 +1,13 @@
 <?php
 
 class Resto{
-
+    private $_idResto;
     private $_nameResto;
     private $_addressResto;
     private $_pictureResto;
     private $_typeResto;
     private $_descriptionResto;
 
-    
-    public function __construct(){
-
-    }
 
     public function setNameResto($nameResto){
         $this->_nameResto = $nameResto;

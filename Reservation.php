@@ -10,13 +10,6 @@ class Booking{
     private $_user;
     private $_restaurant;
 
-    public function __construct($booking_date,$booking_hour,$booking_count,$client,$resto){
-        $this->booking_date = $booking_date;
-        $this->booking_hour = $booking_hour;
-        $this->booking_count = $booking_count;
-        $this->user = $user;
-        $this->resto = $resto;
-    }
 
     public function setIdBooking($idBooking){
         $this->_idBooking = $idBooking;
