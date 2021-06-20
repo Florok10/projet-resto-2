@@ -24,27 +24,25 @@
             </div>
     </div>
 
-    <div class="container" style="margin-top:150px;">
+    <div class="container mb-5" style="margin-top:150px;">
         <div class="row">
 
-            <div class="col-6" style="margin-bottom:50px;">
-                <img class="" src="<?= $_GET['pictureResto']?>" alt="image_resto">
-                <?= var_dump($_GET['pictureResto']); ?>
+            <div class=" d-flex flex-column col-7">
+                <h1><?= $_GET['nameResto']?></h1>
+                <img class="img-thumbnail" src="<?= $_GET['pictureResto']?>" alt="image_resto">
+                <!-- <?= var_dump($_GET['pictureResto']); ?> -->
             </div>
 
-            <div class="col-6">
-            <?= 
-                // avec cette méthode on recupere id via url 
-                $resto->voirResto();
-                
-            ?>
+            <div class="col-5">
                 <div class="col-md-4">
                     <!-- pour savoir quel id il faut aller chercher la description  -->
-                    <h3>Description : <?= $resto['descriptionResto']?></h3><span><?php echo $resto->resto_description?></span>
+                    <h3 class="h3">Description :</h3> <p class="font-size20"><?= $_GET['descriptionResto']?></p>
+                    <p><?= $_GET['typeResto']?></p>
                 </div>
                             
                 <div class="col-12 justify-content-center mb-1" style="margin-top:30px;"> 
-                   <a href="listResto.php" class="btn btn-success">Retour à la liste des resrtaurants</a> 
+                   <a href="listResto.php" class="btn btn-success">Retour à la liste des resrtaurants</a>
+                   <a class="btn btn-danger" href="nvReservation.php?id=<?= $_GET['id_resto']?>&nameResto=<?= $_GET['nameResto']?>&pictureResto=<?= $_GET['pictureResto']?>">Résever</a>
                 </div>
 
             </div>

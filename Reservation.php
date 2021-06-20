@@ -107,7 +107,7 @@ class Booking{
 
             $idCli = intval($_SESSION['obj_user']['id_user']);
         
-            $sth = $dbh->prepare("SELECT user.firstname, Resto.name, Reservation.dateBooking, Reservation.hourBooking  FROM (user INNER JOIN Reservation ON (user.id = Reservation.id_client)) INNER JOIN Resto ON (Reservation.id_resto = Resto.id) WHERE user.id = $idCli ORDER BY dateBooking ASC, hourBooking ASC;");
+            $sth = $dbh->prepare("SELECT user.firstname, restaurant_template.nameResto, reservation.dateBooking, reservation.hourBooking  FROM (user INNER JOIN reservation ON (user.id_user = reservation.id_user)) INNER JOIN restaurant_template ON (Reservation.id_resto = restaurant.id_restaurant) WHERE user.id_user = $idUser ORDER BY dateBooking ASC, hourBooking ASC;");
         
             $sth->execute();
             $count = $sth->rowCount();

@@ -1,9 +1,21 @@
 <?php 
     session_start();
-    $_SESSION['idResto']=$_GET['id'];
+    require_once 'DAO.php';
+    require_once 'controllerResto.php';
+    require_once 'Resto.php';
     $title = 'Réserver';
-    require_once 'header.inc.php';
 ?>
+
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+    <body>
+        <?php require_once 'header.inc.php'; ?>
+        <div class=" d-flex flex-column col-3 m-4">
+            <h1><?= $_GET['nameResto']?></h1>
+            <img class="img-thumbnail" src="<?= $_GET['pictureResto']?>" alt="image_resto">
+            <!-- <?= var_dump($_GET['pictureResto']); ?> -->
+        </div>
 
 <div class="container-fluid d-flex justify-content-center" style="margin-top:200px">
         <div class="row d-flex justify-content-center">
