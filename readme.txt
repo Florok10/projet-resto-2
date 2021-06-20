@@ -19,3 +19,7 @@ fait dans le user.php, je vais regarder des tutos si je ne m'endors pas je conti
 
 j'ai bossé sur la reservation ce matin et ma logique, j'ai la tête qui tourne je me sens 
 vraiment pas bien du tout j'arrête pour le moment
+
+
+
+je m'y remet je me suis reposé ça va mieux
